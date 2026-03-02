@@ -41,6 +41,11 @@ const footerLinks = {
     { href: "/terms", label: "Terms of Service" },
     { href: "/refund", label: "Refund Policy" },
   ],
+  Account: [
+    { href: "/account/orders", label: "Track Orders" },
+    { href: "/account/orders", label: "Order History" },
+    { href: "/account/settings", label: "Settings" },
+  ],
 };
 
 export default function Footer() {
@@ -56,9 +61,9 @@ export default function Footer() {
       <div
         className="container-custom"
         style={{
-          padding: "64px 24px 48px",
+          padding: "64px 40px 48px",
           display: "grid",
-          gridTemplateColumns: "2fr 1fr 1fr 1fr",
+          gridTemplateColumns: "2fr repeat(4, 1fr)",
           gap: "48px",
         }}
       >
@@ -206,7 +211,7 @@ export default function Footer() {
       <div
         style={{
           borderTop: "1px solid var(--surface-border)",
-          padding: "24px",
+          padding: "24px 40px",
         }}
       >
         <div
@@ -247,7 +252,7 @@ export default function Footer() {
       <div
         style={{
           borderTop: "1px solid var(--surface-border)",
-          padding: "20px 24px",
+          padding: "20px 40px",
         }}
       >
         <div

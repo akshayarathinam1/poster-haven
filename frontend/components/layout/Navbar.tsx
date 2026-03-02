@@ -43,7 +43,7 @@ export default function Navbar() {
           background: "var(--primary)",
           color: "#0d0d0d",
           textAlign: "center",
-          padding: "8px 24px",
+          padding: "8px 40px",
           fontSize: "13px",
           fontWeight: 600,
           letterSpacing: "0.05em",
@@ -222,7 +222,7 @@ export default function Navbar() {
 
             {/* Account */}
             <Link
-              href="/account"
+              href="/account/orders"
               style={{
                 background: "none",
                 border: "none",

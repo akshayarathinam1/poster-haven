@@ -59,7 +59,7 @@ export default function HeroSection() {
           gridTemplateColumns: "1fr 1fr",
           gap: "64px",
           alignItems: "center",
-          padding: "80px 24px",
+          padding: "80px 40px",
           position: "relative",
           zIndex: 1,
         }}
@@ -78,7 +78,8 @@ export default function HeroSection() {
               lineHeight: 1.05,
             }}
           >
-            Art that{" "}
+            Turn your walls into
+            <br />
             <span
               style={{
                 color: "var(--primary)",
@@ -86,7 +87,7 @@ export default function HeroSection() {
                 display: "inline-block",
               }}
             >
-              speaks
+              art
               <svg
                 style={{
                   position: "absolute",
@@ -94,11 +95,11 @@ export default function HeroSection() {
                   left: 0,
                   width: "100%",
                 }}
-                viewBox="0 0 200 12"
+                viewBox="0 0 100 12"
                 fill="none"
               >
                 <path
-                  d="M2 10 Q50 2 100 6 Q150 10 198 4"
+                  d="M2 10 Q25 2 50 6 Q75 10 98 4"
                   stroke="var(--primary)"
                   strokeWidth="2.5"
                   strokeLinecap="round"
@@ -106,9 +107,8 @@ export default function HeroSection() {
                 />
               </svg>
             </span>
-            <br />
-            to your{" "}
-            <span style={{ fontStyle: "italic", opacity: 0.8 }}>walls</span>
+            {" "}they{" "}
+            <span style={{ fontStyle: "italic", opacity: 0.8 }}>deserve</span>
           </h1>
 
           <p
@@ -127,15 +127,15 @@ export default function HeroSection() {
           </p>
 
           <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", marginBottom: "48px" }}>
-            <Link href="/shop" className="btn-primary" style={{ textDecoration: "none" }}>
-              Shop Collection →
+            <Link href="/shop?sort=bestseller" className="btn-primary" style={{ textDecoration: "none" }}>
+              Shop Bestsellers →
             </Link>
             <Link
-              href="/shop"
+              href="/shop#categories"
               className="btn-outline"
               style={{ textDecoration: "none" }}
             >
-              Browse Posters
+              Browse Categories
             </Link>
           </div>
 
@@ -202,8 +202,8 @@ export default function HeroSection() {
             }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&q=85"
-              alt="Featured art poster"
+              src="/images/hero-room-wall.png"
+              alt="Art styled in a modern room"
               fill
               style={{ objectFit: "cover" }}
               priority
@@ -229,7 +229,7 @@ export default function HeroSection() {
                   fontFamily: "var(--font-display, serif)",
                 }}
               >
-                Golden Hour Geometry
+                Curated Gallery
               </p>
               <div
                 style={{
@@ -240,7 +240,7 @@ export default function HeroSection() {
                 }}
               >
                 <span style={{ fontSize: "13px", color: "var(--text-muted)" }}>
-                  by Aria Solano
+                  Transformation complete
                 </span>
                 <span
                   style={{
@@ -249,51 +249,12 @@ export default function HeroSection() {
                     fontSize: "15px",
                   }}
                 >
-                  From ₹799
+                  Premium Collection
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Floating mini cards */}
-          <div
-            style={{
-              position: "absolute",
-              top: "20px",
-              right: "-20px",
-              width: "110px",
-              height: "130px",
-              overflow: "hidden",
-              border: "1px solid rgba(232,197,71,0.3)",
-              boxShadow: "0 12px 32px rgba(0,0,0,0.5)",
-            }}
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=200&q=80"
-              alt="Poster preview"
-              fill
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-          <div
-            style={{
-              position: "absolute",
-              bottom: "80px",
-              right: "-30px",
-              width: "100px",
-              height: "120px",
-              overflow: "hidden",
-              border: "1px solid rgba(232,197,71,0.2)",
-              boxShadow: "0 12px 32px rgba(0,0,0,0.5)",
-            }}
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=200&q=80"
-              alt="Poster preview"
-              fill
-              style={{ objectFit: "cover" }}
-            />
-          </div>
         </div>
       </div>
 

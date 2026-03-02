@@ -100,7 +100,7 @@ export default function OrderConfirmationPage() {
             letterSpacing: "0.05em",
           }}
         >
-          #PH{Math.random().toString(36).substring(2, 8).toUpperCase()}
+          {orderId}
         </p>
       </div>
 
@@ -187,11 +187,11 @@ export default function OrderConfirmationPage() {
           Continue Shopping
         </Link>
         <Link
-          href="/account"
+          href="/account/orders"
           className="btn-outline"
           style={{ textDecoration: "none" }}
         >
-          View Orders
+          View Order
         </Link>
       </div>
     </div>

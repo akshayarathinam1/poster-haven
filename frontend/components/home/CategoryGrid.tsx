@@ -10,7 +10,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function CategoryGrid() {
   return (
-    <section style={{ padding: "80px 0" }}>
+    <section id="categories" style={{ padding: "80px 0" }}>
       <div className="container-custom">
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "48px" }}>

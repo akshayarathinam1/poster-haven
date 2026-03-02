@@ -536,3 +536,102 @@ export function getRelatedProducts(product: Product, limit = 4): Product[] {
 export function formatPrice(price: number): string {
     return `₹${price.toLocaleString("en-IN")}`;
 }
+
+// ============================================================
+// MOCK ORDERS
+// ============================================================
+
+import { Order } from "./types";
+
+export const MOCK_ORDERS: Order[] = [
+    {
+        id: "ORD-7294-XJ",
+        createdAt: "2025-02-24T14:30:00Z",
+        status: "delivered",
+        items: [
+            {
+                product: MOCK_PRODUCTS[0], // Golden Hour Geometry
+                variant: MOCK_PRODUCTS[0].variants[1], // A3 Matte
+                quantity: 1,
+            },
+            {
+                product: MOCK_PRODUCTS[4], // Forest Whisper
+                variant: MOCK_PRODUCTS[4].variants[0], // A4 Satin
+                quantity: 1,
+            }
+        ],
+        shippingAddress: {
+            fullName: "Aditya Verma",
+            email: "aditya.v@example.com",
+            phone: "+91 98765 43210",
+            address: "Flat 402, Skyline Residency, HSR Layout",
+            city: "Bangalore",
+            state: "Karnataka",
+            pincode: "560102",
+            country: "India",
+        },
+        subtotal: 2048,
+        shippingCost: 0,
+        discount: 204.8,
+        total: 1843.2,
+        paymentMethod: "Credit Card (Visa)",
+        estimatedDelivery: "2025-02-27",
+    },
+    {
+        id: "ORD-8105-LK",
+        createdAt: "2025-03-01T09:15:00Z",
+        status: "processing",
+        items: [
+            {
+                product: MOCK_PRODUCTS[1], // Tokyo Neon Nights
+                variant: MOCK_PRODUCTS[1].variants[2], // A2 Glossy
+                quantity: 1,
+            }
+        ],
+        shippingAddress: {
+            fullName: "Aditya Verma",
+            email: "aditya.v@example.com",
+            phone: "+91 98765 43210",
+            address: "Flat 402, Skyline Residency, HSR Layout",
+            city: "Bangalore",
+            state: "Karnataka",
+            pincode: "560102",
+            country: "India",
+        },
+        subtotal: 2299,
+        shippingCost: 0,
+        discount: 0,
+        total: 2299,
+        paymentMethod: "UPI (Google Pay)",
+        estimatedDelivery: "2025-03-05",
+    },
+    {
+        id: "ORD-3341-WQ",
+        createdAt: "2025-01-12T11:45:00Z",
+        status: "delivered",
+        items: [
+            {
+                product: MOCK_PRODUCTS[2], // Minimal Waves
+                variant: MOCK_PRODUCTS[2].variants[0], // A4 Matte
+                quantity: 2,
+            }
+        ],
+        shippingAddress: {
+            fullName: "Aditya Verma",
+            email: "aditya.v@example.com",
+            phone: "+91 98765 43210",
+            address: "Flat 402, Skyline Residency, HSR Layout",
+            city: "Bangalore",
+            state: "Karnataka",
+            pincode: "560102",
+            country: "India",
+        },
+        subtotal: 1298,
+        shippingCost: 99,
+        discount: 0,
+        total: 1397,
+        paymentMethod: "Net Banking",
+        estimatedDelivery: "2025-01-16",
+    }
+];
+

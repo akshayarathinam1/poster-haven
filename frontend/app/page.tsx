@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { getFeaturedProducts, getBestsellerProducts, getNewProducts, formatPrice } from "@/lib/mockData";
+import { getBestsellerProducts, formatPrice } from "@/lib/mockData";
 import HeroSection from "@/components/home/HeroSection";
 import CategoryGrid from "@/components/home/CategoryGrid";
 import FeaturesSection from "@/components/home/FeaturesSection";
@@ -9,9 +9,7 @@ import ProductCard from "@/components/product/ProductCard";
 import { ArrowRight } from "lucide-react";
 
 export default function HomePage() {
-  const featured = getFeaturedProducts();
   const bestsellers = getBestsellerProducts().slice(0, 4);
-  const newArrivals = getNewProducts().slice(0, 4);
 
   return (
     <>
@@ -20,42 +18,6 @@ export default function HomePage() {
 
       {/* Category Grid */}
       <CategoryGrid />
-
-      {/* Featured Products */}
-      <section style={{ padding: "80px 0", background: "var(--surface)" }}>
-        <div className="container-custom">
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "flex-end",
-              marginBottom: "40px",
-            }}
-          >
-            <div>
-              <p className="text-label" style={{ marginBottom: "8px" }}>
-                Hand-picked
-              </p>
-              <h2 className="heading-section" style={{ color: "var(--text-primary)" }}>
-                Featured Artworks
-              </h2>
-            </div>
-            <Link
-              href="/shop?featured=true"
-              className="btn-outline"
-              style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "8px" }}
-            >
-              <span>View All</span>
-              <ArrowRight size={16} />
-            </Link>
-          </div>
-          <div className="product-grid">
-            {featured.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Bestsellers */}
       <section style={{ padding: "80px 0" }}>
@@ -148,42 +110,6 @@ export default function HomePage() {
             <span>Shop Sale</span>
             <ArrowRight size={18} />
           </Link>
-        </div>
-      </section>
-
-      {/* New Arrivals */}
-      <section style={{ padding: "80px 0" }}>
-        <div className="container-custom">
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "flex-end",
-              marginBottom: "40px",
-            }}
-          >
-            <div>
-              <p className="text-label" style={{ marginBottom: "8px" }}>
-                Just In
-              </p>
-              <h2 className="heading-section" style={{ color: "var(--text-primary)" }}>
-                New Arrivals
-              </h2>
-            </div>
-            <Link
-              href="/shop?sort=newest"
-              className="btn-outline"
-              style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "8px" }}
-            >
-              <span>View All</span>
-              <ArrowRight size={16} />
-            </Link>
-          </div>
-          <div className="product-grid">
-            {newArrivals.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
-          </div>
         </div>
       </section>
 
