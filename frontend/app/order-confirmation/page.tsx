@@ -1,6 +1,7 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import type { Metadata } from "next";
 import { 
   Check, 
   PartyPopper, 
@@ -10,15 +11,13 @@ import {
   Home 
 } from "lucide-react";
 
-
-export const metadata: Metadata = {
-  title: "Order Confirmed! — Poster Haven",
-  description: "Your order has been placed successfully.",
-};
-
-const orderId = `PH${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
-
 export default function OrderConfirmationPage() {
+  const [orderId, setOrderId] = useState("PH-SEARCHING");
+
+  useEffect(() => {
+    setOrderId(`PH${Math.random().toString(36).substring(2, 8).toUpperCase()}`);
+  }, []);
+
   return (
     <div
       style={{
@@ -181,6 +180,7 @@ export default function OrderConfirmationPage() {
           gap: "16px",
           flexWrap: "wrap",
           justifyContent: "center",
+          marginBottom: "24px"
         }}
       >
         <Link href="/shop" className="btn-primary" style={{ textDecoration: "none" }}>

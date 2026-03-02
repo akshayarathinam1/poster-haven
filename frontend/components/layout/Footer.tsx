@@ -125,10 +125,12 @@ export default function Footer() {
                 placeholder="your@email.com"
                 className="input-base"
                 style={{ flex: 1, fontSize: "13px" }}
+                suppressHydrationWarning
               />
               <button
                 className="btn-primary"
                 style={{ padding: "12px 20px", whiteSpace: "nowrap" }}
+                suppressHydrationWarning
               >
                 Subscribe
               </button>
@@ -181,7 +183,7 @@ export default function Footer() {
             </h4>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "10px" }}>
               {links.map((link) => (
-                <li key={link.href}>
+                <li key={`${link.href}-${link.label}`}>
                   <Link
                     href={link.href}
                     style={{

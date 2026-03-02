@@ -173,6 +173,7 @@ export default function Navbar() {
               }}
               aria-label="Search"
               title="Search"
+              suppressHydrationWarning
             >
               <Search size={20} />
             </button>
@@ -194,6 +195,7 @@ export default function Navbar() {
                 transition: "color 0.2s",
               }}
               aria-label="Cart"
+              suppressHydrationWarning
             >
               <ShoppingCart size={20} />
               {itemCount > 0 && (
